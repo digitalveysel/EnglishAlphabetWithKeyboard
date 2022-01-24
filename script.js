@@ -130,7 +130,7 @@ keyArray.forEach((key) => {
 alphabet.forEach((item, index) => {
   keyArray[index].setAttribute("data-key", alphabet[index].key);
   let temporaryAudio = `
-  <audio data-key="${item.key}" src="sounds/${item.character}.mp3"></audio>
+  <audio data-key="${item.key}" src="./assets/sounds/${item.character}.mp3"></audio>
     `;
   document.getElementById("audios").innerHTML += temporaryAudio;
 });
