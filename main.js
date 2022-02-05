@@ -1,111 +1,7 @@
+import { alphabet } from "./constants/english-alphabet.js";
+
 const keys = document.querySelectorAll(".key");
 const keyArray = Array.from(keys);
-const alphabet = [
-  {
-    character: "A",
-    key: 65,
-  },
-  {
-    character: "B",
-    key: 66,
-  },
-  {
-    character: "C",
-    key: 67,
-  },
-  {
-    character: "D",
-    key: 68,
-  },
-  {
-    character: "E",
-    key: 69,
-  },
-  {
-    character: "F",
-    key: 70,
-  },
-  {
-    character: "G",
-    key: 71,
-  },
-  {
-    character: "H",
-    key: 72,
-  },
-  {
-    character: "I",
-    key: 73,
-  },
-  {
-    character: "J",
-    key: 74,
-  },
-  {
-    character: "K",
-    key: 75,
-  },
-  {
-    character: "L",
-    key: 76,
-  },
-  {
-    character: "M",
-    key: 77,
-  },
-  {
-    character: "N",
-    key: 78,
-  },
-  {
-    character: "O",
-    key: 79,
-  },
-  {
-    character: "P",
-    key: 80,
-  },
-  {
-    character: "Q",
-    key: 81,
-  },
-  {
-    character: "R",
-    key: 82,
-  },
-  {
-    character: "S",
-    key: 83,
-  },
-  {
-    character: "T",
-    key: 84,
-  },
-  {
-    character: "U",
-    key: 85,
-  },
-  {
-    character: "V",
-    key: 86,
-  },
-  {
-    character: "W",
-    key: 87,
-  },
-  {
-    character: "X",
-    key: 88,
-  },
-  {
-    character: "Y",
-    key: 89,
-  },
-  {
-    character: "Z",
-    key: 90,
-  },
-];
 
 //ripple click effect for keys
 keyArray.forEach((key) => {
@@ -152,9 +48,7 @@ function playAudioForClick() {
   content = this.firstChild.innerHTML;
   alphabet.forEach((item) => {
     if (content == item.character) {
-      const audio = document.querySelector(
-        `audio[data-key="${item.key}"]`
-      );
+      const audio = document.querySelector(`audio[data-key="${item.key}"]`);
       if (!audio) return;
       audio.currentTime = 0;
       audio.play();
