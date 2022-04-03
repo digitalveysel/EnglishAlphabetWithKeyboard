@@ -1,21 +1,14 @@
-/* reset css */
-html,
-body,
-div,
-span,
-a,
-kbd,
-audio {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Universal */
+* {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
   box-sizing: border-box;
 }
 
-/* tag classes */
+/* Tag Classes */
 body {
   display: flex;
   flex-direction: column;
@@ -27,14 +20,11 @@ body {
   background: #10141b;
   font-family: "Montserrat", sans-serif;
   -webkit-tap-highlight-color: transparent;
-}
-
-img {
-  filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
+  overflow-x: hidden;
   user-select: none;
 }
 
-/* project classes */
+/* Classes */
 .top-circle {
   content: "";
   position: fixed;
@@ -55,7 +45,6 @@ img {
   margin: 2rem;
   text-shadow: 0 0 5px #fff, 0 0 20px #fff;
   opacity: 0.9;
-  user-select: none;
 }
 
 .bottom-circle {
@@ -71,26 +60,17 @@ img {
 }
 
 .keyboard {
-  font: inherit;
   font-size: 1rem;
   text-align: center;
   display: flex;
-  flex-direction: column;
-}
-
-.keyboard .keyboard-row {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row;
-  margin: 0.2rem;
+  align-items: center;
+  max-width: 90rem;
+  margin: 0 2rem;
 }
 
-.keyboard .keyboard-row .key-box {
-  display: flex;
-  flex-direction: row;
-}
-
-.keyboard .keyboard-row .key {
+.keyboard .key {
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   margin: 0.3rem;
@@ -109,11 +89,9 @@ img {
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
-  user-select: none;
-  cursor: pointer;
 }
 
-.keyboard .keyboard-row .key span {
+.keyboard .key span {
   position: absolute;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -121,12 +99,6 @@ img {
   height: 100px;
   margin-top: -50px;
   margin-left: -50px;
-  animation: ripple-effect 0.5s;
-}
-
-.keyboard .keyboard-row .key:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transition: all 0.2s linear;
 }
 
 .key-playing {
@@ -140,30 +112,9 @@ img {
   margin: 2rem;
 }
 
-/* pseudo classes */
-::-webkit-scrollbar {
-  display: none;
-}
-
-::-webkit-scrollbar-thumb {
-  display: none;
-}
-
-/* animations */
-@keyframes ripple-effect {
-  from {
-    opacity: 1;
-    transform: scale(0);
-  }
-  to {
-    opacity: 0;
-    transform: scale(10);
-  }
-}
-
-/* responsive */
-@media only screen and (max-width: 1250px) {
-  .keyboard .keyboard-row .key {
+/* Media Queries */
+@media screen and (max-width: 1250px) {
+  .keyboard .key {
     height: 5.8rem;
     width: 5.8rem;
   }
@@ -173,8 +124,8 @@ img {
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .keyboard .keyboard-row .key {
+@media screen and (max-width: 1000px) {
+  .keyboard .key {
     height: 5rem;
     width: 5rem;
   }
@@ -184,11 +135,8 @@ img {
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .keyboard .keyboard-row {
-    flex-direction: column;
-  }
-  .keyboard .keyboard-row .key {
+@media screen and (max-width: 900px) {
+  .keyboard .key {
     height: 8rem;
     width: 8rem;
     margin: 0.6rem;
