@@ -34,10 +34,10 @@ function playAudioForKeyDown(event) {
 
   audioElement.currentTime = 0;
   audioElement.play();
-  keyElement.classList.add("key-playing");
+  keyElement.classList.add("active");
 
   setTimeout(() => {
-    keyElement.classList.remove("key-playing");
+    keyElement.classList.remove("active");
   }, 300);
 }
 
