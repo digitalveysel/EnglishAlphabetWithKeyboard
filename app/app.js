@@ -6,15 +6,13 @@ const keyArray = [...document.querySelectorAll(".key")];
  * @description Create audio elements with data-key attribute.
  */
 function createAudioElements() {
-  return new Promise((resolve, reject) => {
-    alphabet.forEach((letter, index) => {
-      keyArray[index].setAttribute("data-key", alphabet[index].key);
-      const tempAudioElement = `
+  alphabet.forEach((letter, index) => {
+    keyArray[index].setAttribute("data-key", alphabet[index].key);
+    const tempAudioElement = `
     <audio data-key="${letter.key}" src="./assets/sounds/${letter.character}.mp3"></audio>
       `;
-      const audiosElement = document.getElementById("audios");
-      audiosElement.innerHTML += tempAudioElement;
-    });
+    const audiosElement = document.getElementById("audios");
+    audiosElement.innerHTML += tempAudioElement;
   });
 }
 
