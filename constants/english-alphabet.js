@@ -1,4 +1,4 @@
-export const alphabet = [
+export const Alphabet = [
   {
     character: "A",
     key: 65,

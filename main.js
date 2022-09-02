@@ -1,4 +1,5 @@
-import { alphabet } from "./constants/english-alphabet.js";
+import "./style.css";
+import { Alphabet } from "./constants/english-alphabet.js";
 
 const keyArray = [...document.querySelectorAll(".key")];
 
@@ -6,10 +7,10 @@ const keyArray = [...document.querySelectorAll(".key")];
  * @description Create audio elements with data-key attribute.
  */
 function createAudioElements() {
-  alphabet.forEach((letter, index) => {
-    keyArray[index].setAttribute("data-key", alphabet[index].key);
+  Alphabet.forEach((letter, index) => {
+    keyArray[index].setAttribute("data-key", Alphabet[index].key);
     const tempAudioElement = `
-    <audio data-key="${letter.key}" src="./assets/sounds/${letter.character}.mp3"></audio>
+    <audio data-key="${letter.key}" src="/sounds/${letter.character}.mp3"></audio>
       `;
     const audiosElement = document.getElementById("audios");
     audiosElement.innerHTML += tempAudioElement;
